@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                tooeasy
-version:             0.1.0.0
+version:             0.1.0.2
 synopsis:            A static site generator.
 -- description:         
 homepage:            https://github.com/recurziv/tooeasy
@@ -19,5 +19,6 @@ library
   -- exposed-modules:     
   -- other-modules:       
   build-depends:       base ==4.5.*,
-                       hakit
+                       hakit,
+                       haquery
   hs-source-dirs:      src

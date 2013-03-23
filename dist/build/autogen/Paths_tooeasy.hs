@@ -12,13 +12,13 @@ catchIO = Exception.catch
 
 
 version :: Version
-version = Version {versionBranch = [0,1,0,0], versionTags = []}
+version = Version {versionBranch = [0,1,0,2], versionTags = []}
 bindir, libdir, datadir, libexecdir :: FilePath
 
 bindir     = "C:\\Users\\geco\\AppData\\Roaming\\cabal\\bin"
-libdir     = "C:\\Users\\geco\\AppData\\Roaming\\cabal\\tooeasy-0.1.0.0\\ghc-7.4.2"
-datadir    = "C:\\Users\\geco\\AppData\\Roaming\\cabal\\tooeasy-0.1.0.0"
-libexecdir = "C:\\Users\\geco\\AppData\\Roaming\\cabal\\tooeasy-0.1.0.0"
+libdir     = "C:\\Users\\geco\\AppData\\Roaming\\cabal\\tooeasy-0.1.0.2\\ghc-7.4.2"
+datadir    = "C:\\Users\\geco\\AppData\\Roaming\\cabal\\tooeasy-0.1.0.2"
+libexecdir = "C:\\Users\\geco\\AppData\\Roaming\\cabal\\tooeasy-0.1.0.2"
 
 getBinDir, getLibDir, getDataDir, getLibexecDir :: IO FilePath
 getBinDir = catchIO (getEnv "tooeasy_bindir") (\_ -> return bindir)
