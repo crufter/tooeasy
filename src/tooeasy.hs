@@ -1,6 +1,9 @@
 {-# LANGUAGE OverloadedStrings      #-}
 
-module TooEasy where
+module TooEasy (
+    loadPosts,
+    loadTemplate
+) where
 
 import qualified Hakit as H
 import qualified Data.List.Split as Spl
@@ -25,8 +28,9 @@ parseWrap t =
         then Haq.div' [] body'
         else body 
 
-indexify :: String -> IO [(H.Document, Haq.Tag)]
-indexify dir = do
+-- | Loads all posts in a given folder.
+loadPosts :: String -> IO [(H.Document, Haq.Tag)]
+loadPosts dir = do
     fnames' <- D.getDirectoryContents dir
     let fnames = filter (not . L.isPrefixOf ".") fnames'
     mapM (\fn -> (readFile $ dir ++ "/" ++ fn) >>= \x -> return $ process x fn) $ trace (show fnames) fnames
@@ -42,5 +46,7 @@ indexify dir = do
             -- We wrap the body in a div if it is more than one tag.
             else (H.set "fileName" fileName meta, body)
 
+-- | Loads a single template file.
+loadTemplate :: String -> IO Haq.Tag
 loadTemplate fileName = parseWrap $ readFile fileName
     

@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                tooeasy
-version:             0.1.0.2
+version:             0.1.0.3
 synopsis:            A static site generator.
 -- description:         
 homepage:            https://github.com/recurziv/tooeasy
