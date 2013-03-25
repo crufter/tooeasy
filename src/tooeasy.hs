@@ -17,7 +17,7 @@ parseMeta :: String -> H.Document
 parseMeta s =
     let byLine = Spl.splitOn "\n" s
         byColon = map (Spl.splitOn ":") byLine
-        fil = map (\xs -> [xs!!0, T.unpack . T.strip $ T.pack (xs!!1)]) $ filter (\xs -> length xs == 2) byColon
+        fil = map (\xs -> [head xs, T.unpack . T.strip . T.pack $ L.intercalate ":" $ tail xs]) $ filter (\xs -> length xs > 1) byColon
     in H.interpretDoc $ map (\xs -> (C.pack (xs!!0), Just $ C.pack (xs!!1))) fil
 
 parseWrap :: T.Text -> Haq.Tag
