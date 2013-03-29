@@ -49,7 +49,7 @@ A template looks like this:
         <title>Title placeholder</title>
     </head>
     <body>
-        <div id="content">Content placeholder</div">
+        <div id="content">Content placeholder</div>
     </body>
 </html>
 ```
@@ -59,4 +59,4 @@ you can easily see how we can build sites with that: insert the metadata and/or 
 
 Too easy, right?
 
-For inspiration see the examples folder or the [source for the recurziv blog](https://github.com/recurziv/recirziv.com-src).
+For inspiration see the examples folder or the [source for the recurziv blog](https://github.com/recurziv/recurziv.com-src).
